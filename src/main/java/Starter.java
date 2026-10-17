@@ -3,9 +3,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import static javafx.application.Application.launch;
+
 public class Starter extends Application {
-    public static void main(String[] args) {
-    launch();
+    public static void main(String args[]){
+        launch();
 
     }
 
@@ -13,5 +15,6 @@ public class Starter extends Application {
     public void start(Stage stage) throws Exception {
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/login_page.fxml"))));
         stage.show();
+
     }
 }
