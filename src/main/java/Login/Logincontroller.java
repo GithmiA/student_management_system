@@ -1,9 +1,12 @@
-public class Logincontroller {
+package Login;
 
-    public boolean nameandpasswordcheck(String name, String password) {
+public class Logincontroller {
+    public boolean checknameandpassword(String name,String password){
         if(name.equals("githmi") && password.equals("1234")){
             return true;
         }
         return false;
     }
+
+
 }
