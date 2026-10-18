@@ -9,8 +9,10 @@ import javafx.scene.control.TextField;
 
 public class AddStudentPageController {
 
+    AddStudentController addStudentController = new AddStudentController();
+
     @FXML
-    private ComboBox<?> cmbBatch;
+    private ComboBox<String> cmbBatch;
 
     @FXML
     private DatePicker dateBirthday;
@@ -67,6 +69,7 @@ public class AddStudentPageController {
 
     @FXML
     void saveStudentOnAction(ActionEvent event) {
+        addStudentController.addStudent(txtStudentName.getText(),txtAddress.getText(),txtEmail.getText(),dateBirthday.getValue(),cmbBatch.getValue(),txtNic.getText());
 
     }
 
@@ -79,6 +82,11 @@ public class AddStudentPageController {
     void viewStudentsOnAction(ActionEvent event) {
 
     }
-
+     public void initialize(){
+        cmbBatch.getItems().addAll(
+                "ICD121",
+                "ICD122"
+        );
+    }
 
 }

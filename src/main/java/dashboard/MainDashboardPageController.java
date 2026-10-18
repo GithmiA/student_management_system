@@ -2,12 +2,18 @@ package dashboard;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class MainDashboardPageController {
 
+    Stage addStudentPage = new Stage();
     @FXML
     private TableColumn<?, ?> colCourse;
 
@@ -51,7 +57,12 @@ public class MainDashboardPageController {
 
     @FXML
     void addStudentOnAction(ActionEvent event) {
-
+        try {
+            addStudentPage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/add_student_page.fxml"))));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        addStudentPage.show();
     }
 
     @FXML
