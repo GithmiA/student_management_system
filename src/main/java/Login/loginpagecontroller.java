@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class loginpagecontroller {
+
     @FXML
     private Button btnLogIn;
 
@@ -28,7 +29,7 @@ public class loginpagecontroller {
         if(logincontroller.checknameandpassword(txtUserName.getText(),txtPassword.getText())){
             Stage stage = new Stage();
             try {
-                stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/home_page.fxml"))));
+                stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/main_dashboard.fxml"))));
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
